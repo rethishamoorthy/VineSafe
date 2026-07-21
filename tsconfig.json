@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "app/dashboard/index.js", "app/dashboard/inventory.jsx", "app/dashboard/monitoring.jsx", "app/dashboard/profile.jsx", "app/dashboard/settings.jsx", "app/public/_layout.jsx", "app/public/about.jsx", "app/public/index.jsx", "app/public/login.jsx", "app/public/signup.jsx", "app/_layout.jsx", "app/dashboard/_layout.jsx", "app/dashboard/alerts.jsx", "app/dashboard/analytics.jsx", "app/index.jsx", "firebaseConfig.js", "services/auth.js"  ]
 }

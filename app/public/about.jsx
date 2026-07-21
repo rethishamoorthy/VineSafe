@@ -24,7 +24,7 @@ import {
 } from "react-native";
 import { ImageBackground } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { styles } from "../styles/aboutStyles";
+import { styles } from "../../styles/aboutStyles";
 
 const features = [
   {
@@ -314,7 +314,7 @@ const currentIndex = useRef(0);
           ]}
         >
           <Ionicons
-            name={item.icon as any}
+            name={item.icon}
             size={34}
             color={item.color}
           />

@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "476617091342",
+    "project_id": "vinesafe-fc830",
+    "storage_bucket": "vinesafe-fc830.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476617091342:android:d4f597860616e534724f5f",
+        "android_client_info": {
+          "package_name": "com.rithisha.vinesafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "476617091342-55fj14pve00etsgvlvi52480cke68qn7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5xFn0giA7hjRng2nJfTY6LRZnAnnE-eg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "476617091342-55fj14pve00etsgvlvi52480cke68qn7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476617091342:android:f88a602cb7329c2e724f5f",
+        "android_client_info": {
+          "package_name": "com.vinesafe.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "476617091342-mrjkpejpdbrrlac98nf721cf9t7lkq9e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vinesafe.app",
+            "certificate_hash": "06170a6d63629bab3e2458408f51d2c8b8f9935b"
+          }
+        },
+        {
+          "client_id": "476617091342-55fj14pve00etsgvlvi52480cke68qn7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5xFn0giA7hjRng2nJfTY6LRZnAnnE-eg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "476617091342-55fj14pve00etsgvlvi52480cke68qn7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

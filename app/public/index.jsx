@@ -4,10 +4,10 @@ import { Image, Pressable, Text, View } from "react-native";
 //import { DrawerActions } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import { getAuth, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { Alert, Dimensions, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
-import app from "../../firebaseConfig";
+import { auth, db } from "../../firebaseConfig";
 const { width } = Dimensions.get("window");
 
 const banners = [
@@ -18,7 +18,6 @@ const banners = [
 ];
 export default function HomeScreen() {
   
-const auth = getAuth(app);
 const router = useRouter();
 const handleLogout = async () => {
   try {
@@ -28,14 +27,14 @@ const handleLogout = async () => {
 
     router.replace("/public");
 
-  } catch (error: any) {
+  } catch (error) {
     Alert.alert("Logout Failed", error.message);
   }
 };
   const navigation = useNavigation();
   return (
     <LinearGradient
-      colors={["#F7FCF8", "#EEF8F1", "#FFFFFF"]as const}
+      colors={["#F7FCF8", "#EEF8F1", "#FFFFFF"]}
       style={styles.container}
     >
       <SafeAreaView style={styles.safeArea}>
@@ -259,7 +258,10 @@ const handleLogout = async () => {
       </SafeAreaView>
     </LinearGradient>
   );
+  
 }
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -515,29 +517,4 @@ subWelcome: {
   marginBottom: 10,
 },
 });
-
-
-
-// research 
-// jernal paper
-// recent paper
-// what is existing and what we including(enhansing)
-// Ai component
-
-// ppt copy superviser ketta sign vanganum:
-
-// Slide title
-// sdg goal maping
-// existing system
-// proposed idea
-// Algorithm,techniques,moduled identified
-// model description
-
-// implementation 50%
-
-// review:
-// July 18
-// 28 Aug
-// 10 oct
-
 
