@@ -8,6 +8,7 @@ import { signOut } from "firebase/auth";
 import { Alert, Dimensions, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 import { auth, db } from "../../firebaseConfig";
+import { useTheme } from "../../context/ThemeContext";
 const { width } = Dimensions.get("window");
 
 const banners = [
@@ -17,7 +18,7 @@ const banners = [
   require("../../assets/banners/banner4.png"),
 ];
 export default function HomeScreen() {
-  
+ const { theme } = useTheme(); 
 const router = useRouter();
 const handleLogout = async () => {
   try {

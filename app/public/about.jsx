@@ -9,7 +9,7 @@ import { DrawerActions } from "@react-navigation/native";
 // import { useNavigation } from "expo-router";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
-
+import { useTheme } from "../../context/ThemeContext";
 import {
   Animated,
   FlatList,
@@ -101,6 +101,7 @@ const scrollX = useRef(new Animated.Value(0)).current;
 
 const currentIndex = useRef(0);
   const isMobile = width < 768;
+  const { theme } = useTheme();
   return (
    
      <SafeAreaView style={styles.container}>

@@ -1,17 +1,56 @@
 
 
 
+// // import { Drawer } from "expo-router/drawer";
+// // import { GestureHandlerRootView } from "react-native-gesture-handler";
+
+// // export default function Layout() {
+// //   return (
+// //     <GestureHandlerRootView style={{ flex: 1 }}>
+// //       <Drawer screenOptions={{ headerShown: false }}>
+
+// //         {/* Main Home (your tabs or home screen) */}
+// //         <Drawer.Screen
+// //           name="(tabs)"
+// //           options={{ title: "Home" }}
+// //         />
+
+// //         <Drawer.Screen
+// //           name="login"
+// //           options={{ title: "Login" }}
+// //         />
+
+// //         <Drawer.Screen
+// //           name="signup"
+// //           options={{ title: "Sign Up" }}
+// //         />
+
+// //         <Drawer.Screen
+// //           name="about"
+// //           options={{ title: "About VineSafe" }}
+// //         />
+
+// //       </Drawer>
+// //     </GestureHandlerRootView>
+// //   );
+// // }
+
+
+
+
 // import { Drawer } from "expo-router/drawer";
 // import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 // export default function Layout() {
 //   return (
 //     <GestureHandlerRootView style={{ flex: 1 }}>
-//       <Drawer screenOptions={{ headerShown: false }}>
-
-//         {/* Main Home (your tabs or home screen) */}
+//      <Drawer
+//   screenOptions={{
+//     headerShown: false,
+//   }}
+// >
 //         <Drawer.Screen
-//           name="(tabs)"
+//           name="index"
 //           options={{ title: "Home" }}
 //         />
 
@@ -29,11 +68,17 @@
 //           name="about"
 //           options={{ title: "About VineSafe" }}
 //         />
-
 //       </Drawer>
+
+      
+
+//             ),
+//   }}
+// />
 //     </GestureHandlerRootView>
 //   );
 // }
+
 
 
 
@@ -44,29 +89,48 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 export default function Layout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-     <Drawer
-  screenOptions={{
-    headerShown: false,
-  }}
->
+      <Drawer
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
         <Drawer.Screen
           name="index"
-          options={{ title: "Home" }}
+          options={{
+            title: "Home",
+          }}
         />
 
         <Drawer.Screen
           name="login"
-          options={{ title: "Login" }}
+          options={{
+            title: "Login",
+          }}
         />
 
         <Drawer.Screen
           name="signup"
-          options={{ title: "Sign Up" }}
+          options={{
+            title: "Sign Up",
+          }}
         />
 
         <Drawer.Screen
           name="about"
-          options={{ title: "About VineSafe" }}
+          options={{
+            title: "About VineSafe",
+          }}
+        />
+
+        {/* Hidden route - NOT shown in Drawer menu */}
+        <Drawer.Screen
+          name="verify-reset-number"
+          options={{
+            drawerItemStyle: {
+              display: "none",
+            },
+            headerShown: false,
+          }}
         />
       </Drawer>
     </GestureHandlerRootView>

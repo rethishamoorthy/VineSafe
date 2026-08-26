@@ -5,7 +5,6 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithCredential,
-  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
@@ -24,7 +23,7 @@ import {
 } from "react-native";
 import app, { db } from "../../firebaseConfig";
 import { Ionicons } from "@expo/vector-icons";
-
+import { useTheme } from "../../context/ThemeContext";
 import {
 
  setDoc
@@ -46,37 +45,11 @@ export default function LoginScreen() {
   //   clientId: "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
   //   scopes: ["openid", "profile", "email"],
   // });
-const handleForgotPassword = async () => {
 
-  if (!email.trim()) {
-    Alert.alert(
-      "Email Required",
-      "Please enter your email address first."
-    );
-    return;
-  }
-
-  try {
-    await sendPasswordResetEmail(
-      auth,
-      email.trim().toLowerCase()
-    );
-
-    Alert.alert(
-      "Password Reset",
-      "A password reset email has been sent."
-    );
-
-  } catch (error) {
-
-    Alert.alert(
-      "Reset Failed",
-      error?.message || "Unable to send reset email."
-    );
-
-  }
-
+const handleForgotPassword = () => {
+  router.push("/public/forgot-password");
 };
+
   useEffect(() => {
      const unsubscribe = onAuthStateChanged(auth, async (user) => {
 

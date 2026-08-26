@@ -25,6 +25,7 @@ import {
 } from "react-native";
 import { db } from "../../firebaseConfig";
 import { auth } from "../../firebaseConfig";
+
 // import * as AuthService from "../../services/auth";
 import GoogleSignin from "../../services/auth";
 export default function SignupScreen() {
