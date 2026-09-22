@@ -1,21 +1,27 @@
 
 
 
-import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
+import { useTheme } from "../../context/ThemeContext";
  
-import React from "react";
+import { router } from "expo-router";
 import { Alert } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { auth, db } from "../../firebaseConfig";
-import { router } from "expo-router";
-import { Drawer } from "expo-router/drawer";
+import { auth } from "../../firebaseConfig";
+//import { Drawer } from "expo-router/drawer";
  
+
 import {
-    DrawerContentScrollView,
-    DrawerItem,
-    DrawerItemList,
-} from "@react-navigation/drawer";
+  Drawer,
+  DrawerContentScrollView,
+  DrawerItem,
+  DrawerItemList,
+} from "expo-router/drawer";
+// import {
+//     DrawerContentScrollView,
+//     DrawerItem,
+//     DrawerItemList,
+// } from "@react-navigation/drawer";
  
 import { Ionicons } from "@expo/vector-icons";
  
@@ -25,34 +31,87 @@ export default function DashboardLayout() {
   
 const { theme } = useTheme();
 const { t } = useLanguage();
+  // const handleLogout = () => {
+  //   Alert.alert(
+  //     t("logout"),
+  //     t("logoutConfirmMsg"),
+  //     [
+  //       {
+  //         text: t("cancel"),
+  //         style: "cancel",
+  //       },
+  //       {
+  //         text: t("logout"),
+  //         style: "destructive",
+  //         onPress: async () => {
+  //           try { 
+  //             await signOut(auth);
+ 
+  //             router.dismissAll();
+ 
+  //             router.replace("/public");
+  //           } catch (error) {
+  //             Alert.alert(t("logoutFailedTitle"), error.message);
+  //           }
+  //         },
+  //       },
+  //     ]
+  //   );
+  // };
+ 
+
+
   const handleLogout = () => {
-    Alert.alert(
-      t("logout"),
-      t("logoutConfirmMsg"),
-      [
-        {
-          text: t("cancel"),
-          style: "cancel",
-        },
-        {
-          text: t("logout"),
-          style: "destructive",
-          onPress: async () => {
-            try { 
-              await signOut(auth);
- 
-              router.dismissAll();
- 
+  Alert.alert(
+    t("logout"),
+    t("logoutConfirmMsg"),
+    [
+      {
+        text: t("cancel"),
+        style: "cancel",
+      },
+      {
+        text: t("logout"),
+        style: "destructive",
+
+        onPress: async () => {
+          try {
+            console.log("🔴 Logout started...");
+            console.log("📱 Platform:", Platform.OS);
+
+            // Firebase logout
+            await signOut(auth);
+
+            console.log("✅ Firebase logout successful");
+
+            if (Platform.OS === "web") {
+              // ================================
+              // WEB
+              // ================================
               router.replace("/public");
-            } catch (error) {
-              Alert.alert(t("logoutFailedTitle"), error.message);
+            } else {
+              // ================================
+              // ANDROID / IOS
+              // ================================
+              router.dismissAll();
+              router.replace("/public");
             }
-          },
+
+            console.log("✅ Redirected to public page");
+
+          } catch (error) {
+            console.error("❌ Logout error:", error);
+
+            Alert.alert(
+              t("logoutFailedTitle"),
+              error?.message || "Logout failed"
+            );
+          }
         },
-      ]
-    );
-  };
- 
+      },
+    ]
+  );
+};
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Drawer
@@ -338,6 +397,23 @@ const { t } = useLanguage();
 
 <Drawer.Screen
   name="forgot-password"
+  options={{
+    drawerItemStyle: { display: "none" },
+    //headerShown: false,
+    headerTitle: "Storage Drtails",
+     drawerIcon: ({ color, size }) => (
+              <Ionicons
+                name="settings-outline"
+                color={color}
+                size={size}
+              />
+            ),
+  }}
+/>
+
+
+<Drawer.Screen
+  name="sensor-monitoring"
   options={{
     drawerItemStyle: { display: "none" },
     //headerShown: false,

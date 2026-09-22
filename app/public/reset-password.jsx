@@ -1,24 +1,24 @@
 import { Ionicons } from "@expo/vector-icons";
 import {
-  useLocalSearchParams,
-  useRouter,
+    useLocalSearchParams,
+    useRouter,
 } from "expo-router";
 import { useState } from "react";
 
 import {
-  ActivityIndicator,
-  Alert,
-  KeyboardAvoidingView,
-  Platform,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
+    ActivityIndicator,
+    Alert,
+    KeyboardAvoidingView,
+    Platform,
+    Pressable,
+    StyleSheet,
+    Text,
+    TextInput,
+    View,
 } from "react-native";
 
 const API_URL =
-  "http://192.168.43.23:5000";
+  "http://10.147.4.54:5000";
 
 export default function ResetPassword() {
 

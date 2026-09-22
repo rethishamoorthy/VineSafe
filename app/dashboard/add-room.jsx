@@ -1,13 +1,13 @@
 
-import { useEffect, useState } from "react";
-import { useLocalSearchParams, router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
+import { useState } from "react";
 import {
-  View,
-  Text,
-  TextInput,
-  Pressable,
-  StyleSheet,
-  Alert,
+    Alert,
+    Pressable,
+    StyleSheet,
+    Text,
+    TextInput,
+    View,
 } from "react-native";
 
 export default function AddRoom() {
@@ -71,8 +71,8 @@ const handleSave = async () => {
 
   try {
     const url = isEditMode
-      ? `http://192.168.43.23:5000/api/room/update/${id}`
-      : "http://192.168.43.23:5000/api/room/add";
+      ? `http://10.147.4.54:5000/api/room/update/${id}`
+      : "http://10.147.4.54:5000/api/room/add";
 
     const method = isEditMode ? "PUT" : "POST";
 

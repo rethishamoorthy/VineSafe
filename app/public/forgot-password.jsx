@@ -232,7 +232,7 @@
 //   ActivityIndicator,
 // } from "react-native";
 
-// const API_URL = "http://192.168.43.23:5000";
+// const API_URL = "http://10.147.4.54:5000";
 
 // export default function ForgotPassword({ navigation }) {
 //   const [email, setEmail] = useState("");
@@ -253,7 +253,7 @@
 
 //   try {
 //     const response = await fetch(
-//       "http://192.168.43.23:5000/api/auth/forgot-password",
+//       "http://10.147.4.54:5000/api/auth/forgot-password",
 //       {
 //         method: "POST",
 //         headers: {
@@ -507,21 +507,21 @@
 
 
 import { Ionicons } from "@expo/vector-icons";
-import { useState } from "react";
 import { useRouter } from "expo-router";
+import { useState } from "react";
 import {
-  ActivityIndicator,
-  Alert,
-  KeyboardAvoidingView,
-  Platform,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
+    ActivityIndicator,
+    Alert,
+    KeyboardAvoidingView,
+    Platform,
+    Pressable,
+    StyleSheet,
+    Text,
+    TextInput,
+    View,
 } from "react-native";
 
-const API_URL = "http://192.168.43.23:5000";
+const API_URL = "http://10.147.4.54:5000";
 
 export default function ForgotPassword({ navigation }) {
   const [email, setEmail] = useState("");
